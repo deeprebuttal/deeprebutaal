@@ -1644,3 +1644,49 @@ pre {
   display: block;
   border-radius: 8px;
 }
+
+/* Config table */
+.config-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  table-layout: auto;
+  max-width: 100%;
+}
+.config-table th,
+.config-table td {
+  padding: 8px 10px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+.config-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  white-space: normal;
+}
+.config-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.config-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+.config-table tbody tr:hover {
+  background: #f0f4ff;
+}
+
+@media (max-width: 900px) {
+  .config-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.85rem;
+  }
+
+  .config-table th,
+  .config-table td {
+    padding: 6px 8px;
+  }
+}

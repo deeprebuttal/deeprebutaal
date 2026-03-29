@@ -68,186 +68,248 @@
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#Teaser">Teaser</a></li>
+                    <li><a href="#Motivation">Motivation</a></li>
+                    <li><a href="#Methods">Methods</a></li>
+                    <li><a href="#visual-representation-alignment">Qualitative Results</a></li>
+                    <li><a href="#comparison">Comparison</a></li>
+                    <li><a href="#ablation-studies">Ablation</a></li>
+                    <li><a href="#interactive-prompting">Interactive Prompting</a></li>
+                    <li><a href="#world-model">World Model</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="title-row">
+                <div class="title-flex">
+                    </video>
+                    <div class="title-text-block">
+                        <h1 class="title"><span class="gradient-text">Deep Forcing</span>: Training-Free Long Video Generation<span class="title-break"></span> with Deep Sink and Participative Compression</h1>
+                    </div>
+                </div>
+            </div>
 
 
+            <div class="base-row author-row">
+            </div>
 
+        </div>
+    </div>
 
     <main class="main-content">
         <div class="container">
+            <div id="Teaser" class="base-row section">
+                <h2>Teaser</h2>
+            </div>
 
-            <section id="various-config" class="section">
-                <h2>Various Deep Forcing Configurations</h2>
-                <table class="config-table">
-                    <thead>
-                        <tr>
-                            <th>Config</th>
-                            <th>Dynamic Degree</th>
-                            <th>Motion Smoothness</th>
-                            <th>Overall Consistency</th>
-                            <th>Imaging Quality</th>
-                            <th>Aesthetic Quality</th>
-                            <th>Subject Consistency</th>
-                            <th>Background Consistency</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sink=8, R=4, B=16</td>
-                            <td>59.81</td>
-                            <td>97.93</td>
-                            <td>20.55</td>
-                            <td>68.35</td>
-                            <td>59.77</td>
-                            <td>97.04</td>
-                            <td>96.21</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=11, R=4, B=16</td>
-                            <td>56.86</td>
-                            <td>98.02</td>
-                            <td>20.78</td>
-                            <td>68.62</td>
-                            <td>60.32</td>
-                            <td>97.29</td>
-                            <td>96.34</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=7, R=7, B=16</td>
-                            <td>57.59</td>
-                            <td>97.88</td>
-                            <td>20.36</td>
-                            <td>68.54</td>
-                            <td>59.94</td>
-                            <td>96.23</td>
-                            <td>96.41</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=5, R=9, B=16</td>
-                            <td>60.10</td>
-                            <td>97.89</td>
-                            <td>20.23</td>
-                            <td>68.51</td>
-                            <td>59.62</td>
-                            <td>96.92</td>
-                            <td>96.26</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=9, R=5, B=16</td>
-                            <td>58.86</td>
-                            <td>97.96</td>
-                            <td>20.51</td>
-                            <td>69.61</td>
-                            <td>60.56</td>
-                            <td>96.95</td>
-                            <td>96.50</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- <div class="mini-tldr">
+                <p><strong>All videos were generated from a single prompt, with no re-caching, and are shown at 1× speed.</strong></p>
+            </div> -->
+
+            <div class="image-container">
+                <div class="video-grid">
+
+                    <div class="video-item">
+                    <div class="video-title">Rolling Forcing</div>
+                    <video
+                        class="video-player"
+                        src="videos/roll_city.mp4"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-prompt="A stylish woman strolls down a bustling Tokyo street, the warm glow of neon lights and animated city signs casting vibrant reflections. She wears a sleek black leather jacket paired with a flowing red dress and black boots, her black purse slung over her shoulder. Sunglasses perched on her nose and a bold red lipstick add to her confident, casual demeanor. The street is damp and reflective, creating a mirror-like effect that enhances the colorful lights and shadows. Pedestrians move about, adding to the lively atmosphere. The scene is captured in a dynamic medium shot with the woman walking slightly to one side, highlighting her graceful strides."
+                    ></video>
+                    </div>
+
+                    <div class="video-item">
+                    <div class="video-title">Deep Forcing (<em>Training-Free</em>)</div>
+                    <video
+                        class="video-player"
+                        src="videos/ours_city.mp4"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-prompt="A stylish woman strolls down a bustling Tokyo street, the warm glow of neon lights and animated city signs casting vibrant reflections. She wears a sleek black leather jacket paired with a flowing red dress and black boots, her black purse slung over her shoulder. Sunglasses perched on her nose and a bold red lipstick add to her confident, casual demeanor. The street is damp and reflective, creating a mirror-like effect that enhances the colorful lights and shadows. Pedestrians move about, adding to the lively atmosphere. The scene is captured in a dynamic medium shot with the woman walking slightly to one side, highlighting her graceful strides."
+                    ></video>
+                    </div>
+
+                    <div class="video-item">
+                    <div class="video-title">LongLive</div>
+                    <video
+                        class="video-player"
+                        src="videos/long_dog.mp4"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-prompt="A vibrant and dynamic illustration in the style of a futuristic sci-fi comic, depicting two playful dogs, a Samoyed and a Golden Retriever, running through a neon-lit city at night. The dogs' fur gleams under the vibrant glow of the city's neon lights, casting colorful reflections. They move energetically, tails wagging, with the Samoyed having a fluffy white coat and the Golden Retriever sporting a golden one. The cityscape is filled with towering skyscrapers adorned with flickering neon signs, creating a mesmerizing visual spectacle. The background features blurred outlines of the city's architecture, with hints of glowing streets and distant buildings. The camera angle captures a medium shot of the dogs from a slightly elevated perspective, emphasizing their joyful movements."
+                    ></video>
+                    </div>
+
+                    <div class="video-item">
+                    <div class="video-title">Deep Forcing (<em>Training-Free</em>)</div>
+                    <video
+                        class="video-player"
+                        src="videos/ours_dog.mp4"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        data-prompt="A vibrant and dynamic illustration in the style of a futuristic sci-fi comic, depicting two playful dogs, a Samoyed and a Golden Retriever, running through a neon-lit city at night. The dogs' fur gleams under the vibrant glow of the city's neon lights, casting colorful reflections. They move energetically, tails wagging, with the Samoyed having a fluffy white coat and the Golden Retriever sporting a golden one. The cityscape is filled with towering skyscrapers adorned with flickering neon signs, creating a mesmerizing visual spectacle. The background features blurred outlines of the city's architecture, with hints of glowing streets and distant buildings. The camera angle captures a medium shot of the dogs from a slightly elevated perspective, emphasizing their joyful movements."
+                    ></video>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tldr">
+                <b>TL;DR</b>: Deep Forcing amplifies Self Forcing's emergent deep sink and performs training-free KV cache compression, mitigating quality degradation in long-horizon video diffusion while preserving dynamic, high-fidelity visuals far beyond the base model's context.
+            </div>
+
+            <div class="base-row section">
+                <p class="explain">
+                    <strong>Deep Forcing</strong> is a training-free framework that enables long-video generation in autoregressive video diffusion models by combining <strong>Deep Sink</strong> and <strong>Participative Compression</strong>. <br>
+                    <br>
+                    <strong>Deep Forcing</strong> achieves <strong>more than 12× length extrapolation</strong> (5s → 60s+) without fine-tuning. This approach delivers superior imaging and aesthetic quality compared to training-based methods while preserving real-time streaming capability.                </p>
+            </div>
+
+            <section id="Motivation" class="section">
+                <h2>Motivation</h2>
+                <div class="image-container motivation-figure motivation-two-col">
+                    <div class="image-content motivation-primary">
+                        <img src="images/motivation_attn.png" class="img medium-image" alt="Comparisons diagram">
+                    </div>
+                    <div class="image-content motivation-secondary">
+                        <img src="images/motivation_attn2.png" class="img medium-image" alt="Additional comparisons diagram">
+                    </div>
+                </div>
+                <div class="motivation-caption">
+                    <p><b>Deep Sink:</b> Our analysis reveals attention distributes across both early and intermediate frames—unlike LLM sinks preserving only few initial tokens—requiring deep sink preservation (40-60%) to maintain fidelity beyond training length.</p>
+
+                    <p><b>Participative Compression:</b> To prevent quality degeneration from attention dilution caused by error accumulation during extreme out-of-distribution long-context extrapolation.</p>
+                </div>
+          </section>
+
+            <section id="Methods" class="section">
+                <h2>Deep Forcing</h2>
+                <div class="image-container methods-figure">
+                    <div class="image-content">
+                        <img src="images/main_figure.png" class="image-item img large-image z-depth-1" alt="VIRAL framework illustration">
+                    </div>
+                </div>
+                <div class="methods-text">
+                    <p>
+                    </p>
+                    <p>
+                   <strong><i>Deep Sink</i></strong> maintains a substantially enlarged attention sink (~50% of cache), with temporal RoPE adjustment, ensuring temporal coherence between sink tokens and current frames. 
+                    <p>
+                    <strong><i>Participative Compression</i></strong>, which selectively prunes redundant tokens by computing attention scores from recent frames, retains only the top-C most contextually relevant tokens while evicting redundant and degraded tokens.
+                    </p>
+                </div>
             </section>
 
-            <section id="causal-forcing" class="section">
-                <h2>Deep Forcing on Causal Forcing</h2>
-                <table class="config-table">
-                    <thead>
-                        <tr>
-                            <th>Config</th>
-                            <th>Dynamic Degree</th>
-                            <th>Motion Smoothness</th>
-                            <th>Overall Consistency</th>
-                            <th>Imaging Quality</th>
-                            <th>Aesthetic Quality</th>
-                            <th>Subject Consistency</th>
-                            <th>Background Consistency</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Original</td>
-                            <td>68.99</td>
-                            <td>97.12</td>
-                            <td>18.66</td>
-                            <td>65.25</td>
-                            <td>55.44</td>
-                            <td>95.74</td>
-                            <td>95.58</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=15</td>
-                            <td>81.06</td>
-                            <td>96.95</td>
-                            <td>19.95</td>
-                            <td>69.96</td>
-                            <td>60.22</td>
-                            <td>96.42</td>
-                            <td>95.73</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=16</td>
-                            <td>80.41</td>
-                            <td>97.16</td>
-                            <td>20.15</td>
-                            <td>70.03</td>
-                            <td>60.62</td>
-                            <td>96.26</td>
-                            <td>95.60</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=5, Budget=16</td>
-                            <td>79.95</td>
-                            <td>97.27</td>
-                            <td>20.31</td>
-                            <td>70.32</td>
-                            <td>60.36</td>
-                            <td>96.17</td>
-                            <td>95.70</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=17</td>
-                            <td>81.45</td>
-                            <td>96.78</td>
-                            <td>19.55</td>
-                            <td>68.31</td>
-                            <td>58.34</td>
-                            <td>96.16</td>
-                            <td>95.83</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=5, Budget=17</td>
-                            <td>81.84</td>
-                            <td>97.04</td>
-                            <td>19.23</td>
-                            <td>68.37</td>
-                            <td>59.31</td>
-                            <td>96.28</td>
-                            <td>95.36</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=6, Budget=17</td>
-                            <td>81.04</td>
-                            <td>97.07</td>
-                            <td>19.57</td>
-                            <td>68.21</td>
-                            <td>59.43</td>
-                            <td>95.78</td>
-                            <td>95.75</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=18</td>
-                            <td>80.02</td>
-                            <td>96.55</td>
-                            <td>19.70</td>
-                            <td>67.56</td>
-                            <td>59.88</td>
-                            <td>95.73</td>
-                            <td>95.48</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+            <section id="visual-representation-alignment" class="section">
+                <h2>Qualitative Results</h2>
+                <p>
+                    Qualitative results demonstrating the capabilities of Deep Forcing.
+                </p>
 
-            <!--
-            <section id="comparison" class="section">
-                <h2>Comparison with baselines on same prompts</h2>
+                <!-- 1) Ours only: 3 x 4 grid (12 clips) -->
+                <h3>Deep Forcing on diverse prompts</h3>
+                <div class="video-grid-3x4">
+                    <!-- Row 1 (모델 인디케이터 포함) -->
+                    <div class="video-item">
+                        <div class="video-label">Corgi</div>
+                        <video class="video-player" src="videos/ours_corgi.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A vibrant and lively vlog-style photo of a corgi in tropical Maui, showcasing the dog energetically filming itself on a sandy beach. The corgi stands on the shore, one paw slightly lifted, with a joyful and curious expression. It wears a colorful collar and a small backpack camera slung over its neck. The background features a lush, palm-fringed beach with clear turquoise waters and a bright blue sky. The photo has a warm, natural lighting effect, capturing the corgi from a slightly elevated angle, emphasizing its playful and adventurous spirit."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Underwater</div>
+                        <video class="video-player" src="videos/ours_underwater_real.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A dynamic FPV aerial view of a vibrant underwater suburban neighborhood, where colorful corals line the streets. The camera moves swiftly, capturing the intricate details of the coral formations and the diverse marine life swimming around. The streets are bustling with colorful fish and schools of tropical fish, creating a lively and energetic atmosphere. The water is crystal clear, with sunlight filtering through, casting a warm glow on the scene. The camera angle shifts slightly, providing a sense of depth and movement, as if the viewer is flying through this underwater world. A fast-paced, first-person view shot with a vivid and lifelike underwater setting."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Burger Boy</div>
+                        <video class="video-player" src="videos/ours_burger.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A Chinese boy wearing glasses sits in a fast food restaurant, enjoying a delicious cheeseburger with his eyes closed. His hair is neatly combed, and he has a slightly dreamy expression. He holds the cheeseburger with both hands, taking a big bite. The background shows other diners and a colorful menu board with various fast food items. The lighting is warm and inviting, creating a cozy atmosphere. A close-up shot from a slightly lower angle, capturing the boy's joyful moment."></video>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="video-item">
+                        <div class="video-label">Kitchen</div>
+                        <video class="video-player" src="videos/ours_kitchen.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A dynamic scene captured in the style of a vibrant food photography, showcasing a chef skillfully chopping onions in a bustling kitchen. The chef, a middle-aged man with a weathered face and determined expression, skillfully slices the onions with quick, practiced movements. He wears a white apron tied neatly around his waist and a chef's hat perched atop his head. The background is a well-equipped kitchen, with stainless steel appliances and countertops cluttered with various cooking tools and ingredients. Steam rises from a pot on the stove, and sunlight filters through the window, casting a warm glow. A medium shot with the chef at the center, capturing the intensity of his work."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Romantic</div>
+                        <video class="video-player" src="videos/ours_romantic.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A romantic scene in a nighttime cityscape where a man and a woman walk hand in hand under a starry sky, their faces illuminated by the soft glow of streetlights. They are dressed in casual yet elegant attire, the man in a dark blue suit and the woman in a light green dress. A wooden bucket is placed on the ground nearby, adding a touch of rustic charm. The couple’s expressions are filled with happiness and affection, as they gaze into each other’s eyes. The background features tall buildings with windows lit up, creating a warm and cozy atmosphere. The stars above twinkle brightly, enhancing the serene and intimate mood. The scene is captured in a medium shot with a slightly upward angle, capturing both the couple and the surrounding environment."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Pigeon</div>
+                        <video class="video-player" src="videos/ours_pigion.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A close-up shot of a Victoria crowned pigeon in a naturalistic wildlife photography style, showcasing its striking blue plumage and red chest. The bird’s crest is adorned with delicate, lacy feathers, and its eye is a striking red color, adding to its regal and majestic appearance. The pigeon’s head is tilted slightly to the side, giving it a regal gaze. The background is blurred, emphasizing the bird’s striking beauty against a soft, muted backdrop. The lighting highlights the bird’s feathers, creating a vibrant and lifelike image."></video>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="video-item">
+                        <div class="video-label">Dwarf</div>
+                        <video class="video-player" src="videos/ours_60s/ours_dwarf.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A close-up view of a glass sphere containing a tranquil Zen garden. Inside, a small Eastern dwarf with weathered skin and a serene expression is raking the sand, meticulously creating intricate patterns with a bamboo rake. His movements are deliberate and meditative, enhancing the peaceful atmosphere of the scene. The background is blurred, revealing only hints of greenery and rocks, adding to the serene setting. The sphere itself is polished, reflecting the surroundings subtly. The camera angle captures the dwarf from a slightly elevated position, emphasizing his focused and contemplative pose."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Flame Wisp</div>
+                        <video class="video-player" src="videos/ours_60s/ours_fire.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A close-up shot of a living flame wisp darting through a bustling fantasy market at night. The wisp, flickering with an ethereal glow, moves swiftly among the stalls and vendors. The market is filled with colorful lanterns, glowing signs, and various magical items. The background features a crowded scene with people in exotic attire, bustling about their business under the soft light of the full moon. The air is filled with the scent of spices and incense. The camera angle is slightly elevated, capturing the dynamic movement of the wisp as it weaves through the market, creating a sense of wonder and enchantment."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Running Pig</div>
+                        <video class="video-player" src="videos/ours_60s/ours_pig.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A vibrant anime illustration in a dynamic motion style of a pink pig running rapidly towards the camera in a narrow alley in Tokyo. The pig has large, round eyes and a playful expression, with its ears perked up and body slightly hunched forward. It is wearing a small, pink bow tie, adding a cute touch to its appearance. The background showcases the bustling Tokyo alley, with colorful signs and neon lights reflecting off the wet pavement. The scene is captured from a low-angle perspective, emphasizing the pig's energetic movement."></video>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="video-item">
+                        <div class="video-label">Dogs</div>
+                        <video class="video-player" src="videos/ours_60s/ours_doggy.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A winter scene in a snowy forest, where a litter of playful golden retriever puppies emerge from the snow. Their heads pop out, their fluffy fur glistening in the sunlight, and they wag their tails joyfully. They are covered in snow, with some paw prints leading away into the deep snow. One puppy is burying its nose in the snow, while another chases a small ball that has rolled nearby. The background shows dense evergreen trees and a gentle slope leading up to a clearing. The air is crisp and cold, with tiny snowflakes falling gently. A close-up shot from a slightly elevated angle, capturing the lively and energetic moment."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Dynamic Puddle</div>
+                        <video class="video-player" src="videos/ours_60s/ours_puddle.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A high-speed video capturing the dynamic interaction between raindrops and a puddle, showcasing the ripples and splashes in vivid detail. Each raindrop hits the surface with force, creating a series of concentric ripples that spread outwards and merge into larger waves. The water splashes upward, dispersing droplets in all directions. The background is a blurred urban setting with tall buildings and streetlights reflecting off the wet pavement. The video has a smooth, cinematic quality with clear, fast-moving visuals. A close-up shot from a low angle, emphasizing the kinetic energy of the raindrops."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Fluffy Monster</div>
+                        <video class="video-player" src="videos/ours_60s/ours_monster.mp4"
+                            autoplay loop muted playsinline
+                            data-prompt="A close-up 3D animated scene of a short, fluffy monster kneeling beside a melting red candle. The monster has large, wide eyes and an open mouth, gazing at the flame with a look of wonder and curiosity. Its soft, fluffy fur contrasts with the warm, dramatic lighting that highlights every detail of its gentle, innocent expression. The pose conveys a sense of playfulness and exploration, as if the creature is discovering the world for the first time. The background features a cozy, warmly lit room with subtle hints of a fireplace and soft furnishings, enhancing the overall atmosphere. The use of warm colors and dramatic lighting creates a captivating and inviting scene."></video>
+                    </div>
+                </div>
+
+                <!-- 2) Ours vs baselines: 4 x 4 grid (기존 그대로) -->
+                <h3 id="comparison" class="comparison-heading">Comparison with baselines on same prompts</h3>
                 <p class="paragraph">
                     Qualitative comparisons of Deep Forcing against Self Forcing and other baselines on same prompts.
                 </p>
@@ -383,10 +445,7 @@
                     </button>
                 </div>
             </section>
-            -->
 
-
-            <!--
             <section id="ablation-studies" class="section">
                 <h2>Ablation</h2>
                 <p class="paragraph">Sink Size Ablation: Larger sinks (10-15 frames) reduce degradation and aesthetic drift, but excessive size (18) causes over-preservation and repetition.</p>
@@ -452,7 +511,81 @@
                 </div>
 
             </section>
-            -->
+
+            <section id="interactive-prompting" class="section">
+                <h2>Interactive Prompting</h2>
+                <p class="paragraph">
+                    Deep Forcing enables users to modify prompts during streaming to interactively generate video in real time. Input prompts can be viewed via the "Prompt" button in the video.
+                </p>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-label">Casino</div>
+                        <video class="video-player" src="videos/casino_global_sink.mp4" autoplay loop muted playsinline
+                        data-prompt="0~10s: A realistic video of a Texas Hold'em poker event at a casino. A male player in his late 30s with a medium build, short dark hair, light stubble, and a sharp jawline wears a fitted navy blazer over a charcoal crew-neck tee, dark jeans, and a stainless-steel watch. He sits at a well-lit poker table and tightly grips his hole cards, wearing a tense, serious expression. The table is filled with chips of various colors, the dealer is seen dealing cards, and several rows of slot machines glow in the background. The camera focuses on the player's strained concentration. Wide shot to medium close-up.&#10;&#10;10~20s: A realistic video of a Texas Hold'em poker event at a casino. The same male player - late 30s, medium build, short dark hair, light stubble, sharp jawline - dressed in a fitted navy blazer over a charcoal tee, dark jeans, and a stainless-steel watch - flicks his cards onto the felt, then leans back in the chair with arms spread wide in celebration. The dealer continues dealing to the table as stacks of multicolored chips crowd the surface; slot machines and nearby patrons fill the background. The camera locks onto the player's exuberant reaction. Wide shot to medium close-up.&#10;&#10;20~30s: A realistic video of a Texas Hold'em poker event at a casino. The same late-30s male player, medium build with short dark hair and light stubble, wearing a navy blazer, charcoal tee, dark jeans, and a stainless-steel watch, reveals the winning hand and leans back in celebration while the dealer keeps the game moving. A nearby patron claps and cheers for the winner, amplifying the festive atmosphere. The table brims with colorful chips, with slot machines and other tables behind. The camera centers on the winner's reaction as the applause rises. Wide shot to medium close-up."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Detective</div>
+                        <video class="video-player" src="videos/detective_global_sink.mp4" autoplay loop muted playsinline
+                        data-prompt="0~10s: A female detective in her 40s, with sharp, intelligent eyes and her brown hair cut in a practical, no-nonsense bob, is standing in her dimly lit office late at night. She is wearing a dark charcoal grey blazer over a simple cream silk blouse. She stares at a large corkboard on the wall, which is covered with a complex web of photos, notes, and newspaper clippings connected by pieces of red string. A single desk lamp casts long shadows across the room, illuminating her thoughtful, determined expression.&#10;&#10;10~20s: A female detective in her 40s, with sharp, intelligent eyes and her brown hair cut in a practical, no-nonsense bob, wearing a dark charcoal grey blazer over a simple cream silk blouse, is studying the case board. Her partner, a younger male detective in his early 30s with a slightly disheveled look, five o'clock shadow, and wearing a slightly rumpled white dress shirt with a loosened dark tie, enters the office. He is holding two steaming Styrofoam cups of coffee and a file folder. He has a tired but resolute look on his face, ready for another long night.&#10;&#10;20~30s: The camera zooms in on the corkboard, moving past the various photos and notes. It settles on a close-up of a single, black-and-white photograph of a key witness, their face etched with worry. A red string is pinned to the photo, leading out of the frame. The shot is grainy and moody, emphasizing the human element and the high stakes of the investigation. The detectives are not visible, only the fragmented clues of the complex puzzle they are trying to solve."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Presentation</div>
+                        <video class="video-player" src="videos/presentation_global_sink.mp4" autoplay loop muted playsinline
+                        data-prompt="0~10s: A young executive in a sharp business suit is giving a presentation in a modern, glass-walled boardroom. She is pointing to a chart on a large screen. Her colleagues are watching attentively.&#10;&#10;10~20s: The young executive giving the presentation in the boardroom is interrupted when the company's charismatic CEO unexpectedly enters the room with a broad smile. All the colleagues turn to look.&#10;&#10;20~30s: The camera slowly zooms in on the presentation screen, moving past the sleek slide title and bullet points. It settles on a close-up of a rising line chart and a highlighted KPI box labeled 'Project Horizon,' with a bold, unexpected milestone date circled in red. A small laser-pointer dot hovers near the most critical point on the graph, and a few handwritten sticky-note annotations are attached to the screen's bezel. The shot is crisp, high-contrast, and corporate yet tense. No people are visible - no faces, hands, silhouettes, reflections, or shadows. The frame contains only the screen and the slide content against a clean, neutral background."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Calligrapher</div>
+                        <video class="video-player" src="videos/calligrapher_global_sink.mp4" autoplay loop muted playsinline
+                        data-prompt="0~10s: An elderly calligrapher with a long, thin beard is carefully painting a Japanese kanji character on a large sheet of rice paper in a serene, traditional dojo. The dojo has paper screens and tatami mats.&#10;&#10;10~20s: The elderly callighapher in the serene dojo is being watched by his young grandson, who is sitting quietly and respectfully a few feet away, observing the master's every move. The room is silent except for the brush on paper.&#10;&#10;20~30s: The elderly calligrapher and his young grandson are in the serene dojo. The master finishes his character and gestures for his grandson to come closer. He hands the boy a smaller brush. The large rice paper sits on the floor."></video>
+                    </div>
+                </div>
+            </section>
+
+            <section id="world-model" class="section">
+                <h2>Application: World Model</h2>
+                <p class="paragraph">
+                    Our methods can be applied to world models such as Matrix-Game 2.0, mitigating error accumulation and color drift.
+                </p>
+                <h3>Dynamic Scene</h3>
+                <p>
+                    When action inputs (e.g., mouse or keyboard controls) are provided in real time, Deep Forcing substantially reduces visual fidelity degradation (e.g., color shifts and vehicle distortion).
+                </p>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-label">Matrix-Game 2.0</div>
+                        <video class="video-player" src="videos/original_demo_icon.mp4" autoplay loop muted playsinline
+                        data-prompt="Matrix-Game 2.0 is I2V model."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Ours</div>
+                        <video class="video-player" src="videos/deep10_demo_icon.mp4" autoplay loop muted playsinline
+                        data-prompt="Matrix-Game 2.0 is I2V model."></video>
+                    </div>
+                </div>
+                <h3 class="subsection-spacer">Static Scene</h3>
+                <p>
+                    When no action input (e.g., mouse or keyboard controls) is provided, Matrix-Game-2.0 begins to degrade rapidly around <b>10s</b>. In contrast, Deep Forcing can maintain a stable world even without action inputs, preventing such degradation.
+                </p>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-label">Matrix-Game 2.0</div>
+                        <video class="video-player" src="videos/static_world_original.mp4" autoplay loop muted playsinline
+                        data-prompt="Matrix-Game 2.0 is I2V model."></video>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-label">Ours</div>
+                        <video class="video-player" src="videos/static_world_demo_icon_DP.mp4" autoplay loop muted playsinline
+                        data-prompt="Matrix-Game 2.0 is I2V model."></video>
+                    </div>
+                </div>
+            </section>
+                
+                
+
+            <section id="conclusion" class="section">
+                <h2>Conclusion</h2>
+
+                <p>In this work, we propose Deep Forcing, a training-free framework that mitigates error accumulation in autoregressive long video generation through two key mechanisms: Deep Sink and Participative Compression. By exploiting the inherent deep attention sink behavior in pre-trained models, our method enables minute-long video generation while preserving visual fidelity and motion dynamics. Extensive experiments across VBench-Long, user studies, and VLM evaluation demonstrate that our training-free framework achieves strong performance competitive with training-based methods.</p>
 
         </div>
     </main>

@@ -68,184 +68,22 @@
 </head>
 
 <body>
-
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#comparison">Comparison</a></li>
+                    <li><a href="#ablation-studies">Ablation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
 
 
     <main class="main-content">
         <div class="container">
 
-            <section id="various-config" class="section">
-                <h2>Various Deep Forcing Configurations</h2>
-                <table class="config-table">
-                    <thead>
-                        <tr>
-                            <th>Config</th>
-                            <th>Dynamic Degree</th>
-                            <th>Motion Smoothness</th>
-                            <th>Overall Consistency</th>
-                            <th>Imaging Quality</th>
-                            <th>Aesthetic Quality</th>
-                            <th>Subject Consistency</th>
-                            <th>Background Consistency</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sink=8, R=4, B=16</td>
-                            <td>59.81</td>
-                            <td>97.93</td>
-                            <td>20.55</td>
-                            <td>68.35</td>
-                            <td>59.77</td>
-                            <td>97.04</td>
-                            <td>96.21</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=11, R=4, B=16</td>
-                            <td>56.86</td>
-                            <td>98.02</td>
-                            <td>20.78</td>
-                            <td>68.62</td>
-                            <td>60.32</td>
-                            <td>97.29</td>
-                            <td>96.34</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=7, R=7, B=16</td>
-                            <td>57.59</td>
-                            <td>97.88</td>
-                            <td>20.36</td>
-                            <td>68.54</td>
-                            <td>59.94</td>
-                            <td>96.23</td>
-                            <td>96.41</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=5, R=9, B=16</td>
-                            <td>60.10</td>
-                            <td>97.89</td>
-                            <td>20.23</td>
-                            <td>68.51</td>
-                            <td>59.62</td>
-                            <td>96.92</td>
-                            <td>96.26</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=9, R=5, B=16</td>
-                            <td>58.86</td>
-                            <td>97.96</td>
-                            <td>20.51</td>
-                            <td>69.61</td>
-                            <td>60.56</td>
-                            <td>96.95</td>
-                            <td>96.50</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section id="causal-forcing" class="section">
-                <h2>Deep Forcing on Causal Forcing</h2>
-                <table class="config-table">
-                    <thead>
-                        <tr>
-                            <th>Config</th>
-                            <th>Dynamic Degree</th>
-                            <th>Motion Smoothness</th>
-                            <th>Overall Consistency</th>
-                            <th>Imaging Quality</th>
-                            <th>Aesthetic Quality</th>
-                            <th>Subject Consistency</th>
-                            <th>Background Consistency</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Original</td>
-                            <td>68.99</td>
-                            <td>97.12</td>
-                            <td>18.66</td>
-                            <td>65.25</td>
-                            <td>55.44</td>
-                            <td>95.74</td>
-                            <td>95.58</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=15</td>
-                            <td>81.06</td>
-                            <td>96.95</td>
-                            <td>19.95</td>
-                            <td>69.96</td>
-                            <td>60.22</td>
-                            <td>96.42</td>
-                            <td>95.73</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=16</td>
-                            <td>80.41</td>
-                            <td>97.16</td>
-                            <td>20.15</td>
-                            <td>70.03</td>
-                            <td>60.62</td>
-                            <td>96.26</td>
-                            <td>95.60</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=5, Budget=16</td>
-                            <td>79.95</td>
-                            <td>97.27</td>
-                            <td>20.31</td>
-                            <td>70.32</td>
-                            <td>60.36</td>
-                            <td>96.17</td>
-                            <td>95.70</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=17</td>
-                            <td>81.45</td>
-                            <td>96.78</td>
-                            <td>19.55</td>
-                            <td>68.31</td>
-                            <td>58.34</td>
-                            <td>96.16</td>
-                            <td>95.83</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=5, Budget=17</td>
-                            <td>81.84</td>
-                            <td>97.04</td>
-                            <td>19.23</td>
-                            <td>68.37</td>
-                            <td>59.31</td>
-                            <td>96.28</td>
-                            <td>95.36</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=6, Budget=17</td>
-                            <td>81.04</td>
-                            <td>97.07</td>
-                            <td>19.57</td>
-                            <td>68.21</td>
-                            <td>59.43</td>
-                            <td>95.78</td>
-                            <td>95.75</td>
-                        </tr>
-                        <tr>
-                            <td>Sink=10, Recent=4, Budget=18</td>
-                            <td>80.02</td>
-                            <td>96.55</td>
-                            <td>19.70</td>
-                            <td>67.56</td>
-                            <td>59.88</td>
-                            <td>95.73</td>
-                            <td>95.48</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <!--
             <section id="comparison" class="section">
                 <h2>Comparison with baselines on same prompts</h2>
                 <p class="paragraph">
@@ -383,10 +221,8 @@
                     </button>
                 </div>
             </section>
-            -->
 
 
-            <!--
             <section id="ablation-studies" class="section">
                 <h2>Ablation</h2>
                 <p class="paragraph">Sink Size Ablation: Larger sinks (10-15 frames) reduce degradation and aesthetic drift, but excessive size (18) causes over-preservation and repetition.</p>
@@ -452,7 +288,6 @@
                 </div>
 
             </section>
-            -->
 
         </div>
     </main>
